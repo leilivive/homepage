@@ -15,12 +15,24 @@ a:hover {
 
 /* header */
 
-h1 {
-    font-family: 'Great Vibes', cursive;
+.header-cta {
+    position: relative;
     background: #c90c51;
     color: #fff;
-    margin: 0;
     padding: 2rem;
+}
+
+.header-cta .btn {
+    opacity: 0;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1rem;
+    transition: opacity 0.5s ease 0s;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    margin: 0;
     font-size: 2.5rem;
     text-align: center;
     text-shadow: 10px 8px 13px black;
@@ -36,24 +48,17 @@ h2 {
     text-align: center;
 }
 
-@media (min-width: 576px) {
-    h1 { font-size: 4rem; padding: 3rem; }
-    h2 { font-size: 1.2rem; }
-}
-
-@media (min-width: 768px) {
-    h1 { font-size: 7rem; }
-    h2 { font-size: 2rem; }
-}
-
 h2, h3 {
     font-family: 'Trocchi', serif;
 }
 
 /* section book */
 
+section, footer {
+    padding: 5rem 0;
+}
+
 .section-book {
-    padding: 7rem 0;
     background: #fff;
 }
 
@@ -65,14 +70,12 @@ h3 {
 /* section bio */
 
 .section-bio {
-    padding: 7rem 0;
     background: #eff4f4;
 }
 
 /* footer */
 
 footer {
-    padding: 7rem 0;
     background: #333;
     color: #eee;
 }
@@ -83,4 +86,20 @@ footer a {
 
 footer a:hover {
     color: #fff;
+}
+
+/* media queries */
+
+
+@media (min-width: 576px) {
+    .header-cta { padding: 3rem; }
+    h1 { font-size: 4rem; }
+    h2 { font-size: 1.2rem; }
+    section, footer { padding: 7rem 0; }
+}
+
+@media (min-width: 768px) {
+    .header-cta .btn { opacity: 1; }
+    h1 { font-size: 7rem; }
+    h2 { font-size: 2rem; }
 }
