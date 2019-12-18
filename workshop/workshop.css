@@ -136,8 +136,8 @@ body {
   }
 
   .Section__portrait {
-    float: left;
-    margin-right: 16px;
+    float: right;
+    margin-left: 16px;
     margin-bottom: 0;
   }
 
