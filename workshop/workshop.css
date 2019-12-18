@@ -34,6 +34,13 @@ body {
   background: #f8f8f8;
 }
 
+.Section__portrait {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 16px;
+}
+
 .Section h1 {
   margin: 40px 0 32px;
   font-size: 32px;
@@ -120,8 +127,14 @@ body {
 }
 
 @media (min-width: 664px) {
-  .Section__text {
+  .Section p {
     text-align: justify;
+  }
+
+  .Section__portrait {
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 0;
   }
 
   .Container {
