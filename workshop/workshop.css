@@ -88,6 +88,10 @@ body {
   color: #111;
 }
 
+.Section--align-left {
+  text-align: left !important;
+}
+
 .Footer {
   padding: 48px 0 96px;
   border-top: 2px solid #e84838;
