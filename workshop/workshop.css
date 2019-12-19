@@ -34,6 +34,15 @@ body {
   background: #f8f8f8;
 }
 
+.Section--hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
 .Section__portrait {
   display: block;
   width: 160px;
