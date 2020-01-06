@@ -101,6 +101,67 @@ body {
   text-align: left !important;
 }
 
+.SectionHeader__link {
+  color: #333 !important;
+  text-decoration: none;
+}
+
+.SectionHeader__link:hover,
+.SectionHeader__link:active {
+  color: #4c4c4c !important;
+  text-decoration: underline;
+}
+
+.Date {
+  display: flex;
+  flex-direction: column;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #ee7367;
+  border-radius: 5px;
+}
+
+.Date--left {
+  float: left;
+  margin-top: 8px;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+
+.Date__day,
+.Date__month {
+  flex-basis: 50%;
+  flex-grow: 1;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.Date__day {
+  color: #444;
+}
+
+.Date__month {
+  background: #ee7367;
+  color: #222;
+}
+
+.Date__link {
+  color: #333 !important;
+  text-decoration: none;
+}
+
+.Date__link:hover,
+.Date__link:active {
+  color: #4c4c4c !important;
+  text-decoration: underline;
+}
+
+.Date__text {
+  line-height: 56px;
+}
+
 .Footer {
   padding: 48px 0 96px;
   border-top: 2px solid #e84838;
