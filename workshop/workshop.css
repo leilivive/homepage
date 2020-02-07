@@ -101,6 +101,24 @@ body {
   text-align: left !important;
 }
 
+.Section--background {
+  background: url('./workshop-background.jpg') no-repeat center center fixed !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+.Section--background h2 {
+  color: #eee;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.Section--background p {
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
 .SectionHeader__link {
   color: #333 !important;
   text-decoration: none;
