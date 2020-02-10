@@ -177,7 +177,10 @@ body {
 }
 
 .Date__text {
-  line-height: 56px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 56px;
 }
 
 .Footer {
