@@ -10,6 +10,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
 .Banner {
   background: #000;
   text-align: center;
@@ -64,6 +78,14 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #333;
+}
+
+.Section h3 {
+  margin: 32px 0 16px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #444;
 }
 
 .Section p {
