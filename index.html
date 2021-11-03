@@ -7,24 +7,72 @@
   <meta property="og:description" content="Willkommen bei Lavinia Knop-Walling, freiberufliche Autorin, Bloggerin und Workshopleiterin. Hört doch mal bei ihren Workshops vorbei.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://laviniaknop.com">
-  <meta property="og:image:url" content="https://laviniaknop.com/workshop/workshop-banner.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1050">
-  <meta property="og:image:height" content="745">
-  <meta property="og:image:alt" content="Mit Ohren sehen. Zeichnung von zwei Ohren, die wie Augen aussehen.">
+  <meta property="og:image:url" content="https://laviniaknop.com/img/lavinia-banner/lavinia-banner_1600w.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1214">
+  <meta property="og:image:alt" content="Lavinia sitzt auf einer gelben Bank vor dem Berliner Ensemble.">
 
   <title>Home – Lavinia Knop-Walling</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./workshop/workshop.css">
+  <style>
+    .HomeBanner {
+      position: relative;
+    }
+    .HomeBanner__image {
+      max-width: 100%;
+      height: auto;
+    }
+    .HomeBanner__label {
+      position: absolute;
+      top: 10%;
+      right: 7%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: calc(4vw + 4px);
+      line-height: calc(5vw + 10px);
+      text-shadow: 2px 4px 3px #000;
+      max-width: 40%;
+      color: #f9e552;
+      text-align: right;
+    }
+    @media screen and (max-width: 800px) {
+      .HomeBanner__label {
+        top: 1%;
+        left: 0;
+        right: 0;
+        max-width: none;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="Banner" id="banner">
-    <img class="Banner__image" src="./workshop/workshop-banner.svg" alt="Mit Ohren sehen. Zeichnung von zwei Ohren, die wie Augen aussehen.">
+  <header class="HomeBanner" id="banner">
+    <h1 class="HomeBanner__label">Lavinia Knop-Walling</h1>
+    <picture class="HomeBanner__image">
+      <source srcset="./img/lavinia-banner/lavinia-banner_1600w.webp 1600w, ./img/lavinia-banner/lavinia-banner_1200w.webp 1200w, ./img/lavinia-banner/lavinia-banner_800w.webp 800w, ./img/lavinia-banner/lavinia-banner_400w.webp 400w" type="image/webp">
+      <source srcset="./img/lavinia-banner/lavinia-banner_1600w.jpg 1600w, ./img/lavinia-banner/lavinia-banner_1200w.jpg 1200w, ./img/lavinia-banner/lavinia-banner_800w.jpg 800w, ./img/lavinia-banner/lavinia-banner_400w.jpg 400w" type="image/jpeg">
+      <img src="./img/lavinia-banner/lavinia-banner_1600w.jpg" alt="Lavinia sitzt auf einer gelben Bank vor dem Berliner Ensemble.">
+    </picture>
+    <img src="" alt="">
   </header>
   <main>
-    <section class="Section" id="home" aria-label="Home">
+    <section class="Section" id="bio" aria-labelledby="bio__title">
       <div class="Container">
-        <p class="Section--align-left">Willkommen bei Lavinia Knop-Walling, freiberufliche Autorin, Bloggerin und Workshopleiterin. Hört doch mal bei <a href="/workshop">ihren Workshops vorbei.</a></p>
+        <h2 id="bio__title">Bio</h2>
+        <p class="Section--align-left">Jahrgang 1989, ist eine blinde Storytellerin, Bloggerin, Podcasterin, Workshopleiterin und Inklusionsberaterin. Sie hat einen Master in „Irgendwas mit Medien“ und arbeitet freiberuflich für inklusive Kulturprojekte wie dem „Berliner Spielplan Audiodeskription“ von Förderband e.V. und „Find your voice“ von Kulturregen Berlin gUG. Ihre Lieblingsthemen sind Audiodeskription für blinde Theaterfans, inklusive Kulturangebote und Geschichtenerzählen, egal in welchem Medium. Sie lebt analog in Berlin und digital in der ganzen Welt.</p>
+      </div>
+    </section>
+
+    <section class="Section" id="projekte" aria-labelledby="projekte__title">
+      <div class="Container">
+        <h2 id="projekte__title">Laufende Projekte</h2>
+        <p><a href="/workshop"><img src="./workshop/workshop-banner.svg" alt="Mit Ohren sehen. Zeichnung von zwei Ohren, die wie Augen aussehen."></a></p>
+        <p>Schau dich einmal um. Wie viele der Dinge, die du in deinem alltäglichen Leben benutzt, könntest du blind erfassen? Könntest du dein Handy bedienen? Ein Straßenschild erkennen? Einen Flyer lesen? Tagtäglich werden wir mit Bildern bombardiert, die unsere Aufmerksamkeit einfordern. <a href="/workshop">Mehr über dem „mit Ohren sehen“-Workshop lesen …</a></p>
       </div>
     </section>
   </main>
@@ -39,7 +87,7 @@
           <li class="Nav__item"><a class="Nav__link" href="/impressum">Impressum</a></li>
         </ul>
       </nav>
-      <p class="Footer__item"><small class="Footer__copyright">© Copyright 2019, Lavinia Knop-Walling. Alle Inhalte, insbesondere Texte, Fotografien und Grafiken sind urheberrechtlich geschützt. Alle Rechte, einschließlich der Vervielfältigung, Veröffentlichung, Bearbeitung und Übersetzung, bleiben vorbehalten.</small></p>
+      <p class="Footer__item"><small class="Footer__copyright">© Copyright 2021, Lavinia Knop-Walling. Alle Inhalte, insbesondere Texte, Fotografien und Grafiken sind urheberrechtlich geschützt. Alle Rechte, einschließlich der Vervielfältigung, Veröffentlichung, Bearbeitung und Übersetzung, bleiben vorbehalten.</small></p>
     </div>
   </footer>
 </body>
