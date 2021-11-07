@@ -34,6 +34,7 @@
       max-width: 40%;
       color: #f9e552;
       text-align: right;
+      z-index: 1;
     }
     .HomeBanner__image {
       max-width: 100%;
@@ -45,7 +46,8 @@
       right: 0;
       padding: 0 4px;
       margin: 8px;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
       color: #222;
       border-radius: 4px;
       font-size: calc(1vw + 8px);
@@ -80,9 +82,9 @@
     <picture class="HomeBanner__image">
       <source srcset="./img/lavinia-banner/lavinia-banner_1600w.webp 1600w, ./img/lavinia-banner/lavinia-banner_1200w.webp 1200w, ./img/lavinia-banner/lavinia-banner_800w.webp 800w, ./img/lavinia-banner/lavinia-banner_400w.webp 400w" type="image/webp">
       <source srcset="./img/lavinia-banner/lavinia-banner_1600w.jpg 1600w, ./img/lavinia-banner/lavinia-banner_1200w.jpg 1200w, ./img/lavinia-banner/lavinia-banner_800w.jpg 800w, ./img/lavinia-banner/lavinia-banner_400w.jpg 400w" type="image/jpeg">
-      <img src="./img/lavinia-banner/lavinia-banner_1600w.jpg" alt="Lavinia sitzt auf einer gelben Bank vor dem Berliner Ensemble.">
+      <img id="banner__image" src="./img/lavinia-banner/lavinia-banner_1600w.jpg" alt="Lavinia sitzt auf einer gelben Bank vor dem Berliner Ensemble.">
     </picture>
-    <p class="HomeBanner__copyright">Foto: <a href="https://www.christiane-reinsch.de" target="_blank">© 2021 Christiane Reinsch<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</p>
+    <p class="HomeBanner__copyright" id="banner__copyright">Foto: <a href="https://www.christiane-reinsch.de" target="_blank">© 2021 Christiane Reinsch<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</p>
   </header>
   <main>
     <!--
@@ -210,5 +212,59 @@
       <p class="Footer__item"><small class="Footer__copyright">© Copyright 2021, Lavinia Knop-Walling. Alle Inhalte, insbesondere Texte, Fotografien und Grafiken sind urheberrechtlich geschützt. Alle Rechte, einschließlich der Vervielfältigung, Veröffentlichung, Bearbeitung und Übersetzung, bleiben vorbehalten.</small></p>
     </div>
   </footer>
+  <script>
+    (function() {
+      function clamp(value, a, b) {
+        return Math.min(Math.max(a, value), b);
+      }
+
+      let lastEffectValue = -1;
+      const bannerImage = document.getElementById("banner__image");
+      const bannerCopyright = document.getElementById("banner__copyright");
+      function scrollEffect(position, height) {
+        const effectValue = Math.round(clamp((position / height) ** 2, 0, 1) * 50);
+        if (effectValue === lastEffectValue) return;
+        lastEffectValue = effectValue;
+
+        // bannerImage.style.transform = 'scale(1.05)';
+        bannerImage.style.filter = `brightness(${100+effectValue*5}%)`; // blur(${effectValue*2}px)
+        // bannerCopyright.style.transform = `translate3d(0, ${-1 * effectValue}px, 0)`;
+        bannerCopyright.style.opacity = `${1.0 - effectValue / 75}`;
+      }
+
+      let lastPosition = window.scrollY;
+      let lastHeight = window.innerHeight;
+      let ticking = false;
+      let retick = false;
+      function tickEffect() {
+        if (ticking) {
+          retick = true;
+          return;
+        }
+
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          scrollEffect(lastPosition, lastHeight);
+          ticking = false;
+
+          if (retick) {
+            retick = false;
+            tickEffect();
+          }
+        });
+      }
+      tickEffect();
+
+      document.addEventListener('scroll', () => {
+        lastPosition = window.scrollY;
+        tickEffect();
+      });
+
+      window.addEventListener('resize', () => {
+        lastHeight = bannerImage.clientHeight;
+        tickEffect();
+      });
+    })();
+  </script>
 </body>
 </html>
